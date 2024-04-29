@@ -7,11 +7,7 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import Tailoring from "./sections/Tailoring";
 import HomeTextiles from "./sections/HomeTextiles";
 import Slider from "react-slick";
-import {
-  COLLECTIONSLICK_SETTING,
-  COLLECTION_SLICK_SETTING,
-  SLICK_SETTING,
-} from "@/app/utils/constant";
+import { COLLECTION_SLICK_SETTING, SLICK_SETTING } from "@/app/utils/constant";
 import { FaCheck, FaStar } from "react-icons/fa";
 import Button from "@/app/shared/button/Button";
 import BeautyAndComfort from "./sections/BeautyAndComfort";
