@@ -11,7 +11,7 @@ const HeroSection = () => {
       <div className="flex items-end justify-between space-x20">
         <div className="space-y-10 -mb-[6%]">
           <div className="text-[13px] uppercase leading-7 tracking-widest">
-            Make your home look<br></br> it's very best , no compromise.
+            Make your home look<br></br> it&apos;s very best , no compromise.
             <br></br>You deserve it
           </div>
           <Img
