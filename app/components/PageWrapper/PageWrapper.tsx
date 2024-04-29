@@ -1,7 +1,7 @@
-'use client'
+"use client";
 import { FC, Fragment, PropsWithChildren, useState } from "react";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Navbar from "../navbar";
 import Footer from "../footer";
 interface IPageWraps {
@@ -29,13 +29,14 @@ const PageWrapper: FC<PropsWithChildren<IPageWraps>> = ({
     <Fragment>
       <div className="animate-bottom">
         <Navbar />
-        <div className={`bg-white ${wrapperClass}`}>{children}</div>
+        <div className={`${wrapperClass}`}>{children}</div>
         {isActive && (
           <div
             className="z-10 w-12 h-8 hover:h-10 duration-300 bottom-0 right-10 rounded-t-md fixed cursor-pointer bg-primary flex items-center justify-center"
             onClick={() => window.scroll(0, 0)}
           ></div>
         )}
+
         <Footer />
       </div>
     </Fragment>

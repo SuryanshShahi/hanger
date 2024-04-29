@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: span;
+  src: url("../public/fonts/span.otf");
+}
+body {
+  font-family: span;
+}
+.container-lg {
+  @apply max-w-[1400px] mx-auto;
+}
+.container-sm {
+  @apply max-w-[1280px] mx-auto;
+}
+
+#navbar.active {
+  animation: fadeNav 0.7s linear forwards;
+  background-color: white;
+}
+@keyframes fadeNav {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
