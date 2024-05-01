@@ -1,4 +1,5 @@
 import HoverText from "@/app/shared/HoverText";
+import Social from "@/app/shared/cards/Social";
 import React from "react";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
@@ -14,16 +15,15 @@ const Footer = () => {
               Germany — 785 15h Street, Office 478 Berlin, De 81566
             </p>
             <div className="flex gap-x-5">
-              {[<FaFacebookF />, <FaTwitter />, <FaInstagram />]?.map(
-                (item, idx) => (
-                  <div
-                    key={idx}
-                    className="h-11 w-11 hover:rotate-[360deg] duration-500 cursor-pointer text-base text-white flex items-center justify-center rounded-full border border-[rgba(249,249,249,0.15)]"
-                  >
-                    {item}
-                  </div>
-                )
-              )}
+              <Social>
+                <FaFacebookF />
+              </Social>
+              <Social>
+                <FaTwitter />
+              </Social>
+              <Social>
+                <FaInstagram />
+              </Social>
             </div>
           </div>
           <div className="space-y-6 max-w-64">
