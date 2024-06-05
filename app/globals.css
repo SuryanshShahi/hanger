@@ -21,6 +21,7 @@ body {
 #navbar.active {
   animation: fadeNav 0.7s linear forwards;
   background-color: white;
+  top: 0;
 }
 @keyframes fadeNav {
   0% {

@@ -9,10 +9,11 @@ const styles = {
     noHover?: boolean
   ) =>
     clsx(
-      "h-max text-white text-sm bg-[#763235] duration-500 p-2 px-5",
+      "h-max text-white bg-[#763235] duration-500 p-2 px-5",
       fullWidth && "w-full",
       {
         "p-1 text-base": size === "md",
+        "p-3 text-sm": size === "sm",
         "p-3 text-lg": size === "lg",
       },
       className,
