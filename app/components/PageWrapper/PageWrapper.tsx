@@ -1,5 +1,5 @@
 "use client";
-import { FC, Fragment, PropsWithChildren, useState } from "react";
+import { FC, Fragment, PropsWithChildren, Suspense, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Navbar from "../navbar";
@@ -27,22 +27,24 @@ const PageWrapper: FC<PropsWithChildren<IPageWraps>> = ({
   };
   typeof window !== "undefined" && window.addEventListener("scroll", slideNav);
   return (
-    <Fragment>
-      <div className="animate-bottom">
-        <Navbar />
-        <div className={`${wrapperClass}`}>{children}</div>
-        {isActive && (
-          <div
-            className="z-10 w-12 h-8 hover:h-10 duration-300 bottom-0 right-10 rounded-t-md fixed cursor-pointer bg-primary flex items-center justify-center"
-            onClick={() => window.scroll(0, 0)}
-          >
-            <IoIosArrowUp color="white" />
-          </div>
-        )}
+    <Suspense fallback={<div>...Loading</div>}>
+      <Fragment>
+        <div className="animate-bottom">
+          <Navbar />
+          <div className={`${wrapperClass}`}>{children}</div>
+          {isActive && (
+            <div
+              className="z-10 w-12 h-8 hover:h-10 duration-300 bottom-0 right-10 rounded-t-md fixed cursor-pointer bg-primary flex items-center justify-center"
+              onClick={() => window.scroll(0, 0)}
+            >
+              <IoIosArrowUp color="white" />
+            </div>
+          )}
 
-        <Footer />
-      </div>
-    </Fragment>
+          <Footer />
+        </div>
+      </Fragment>
+    </Suspense>
   );
 };
 
