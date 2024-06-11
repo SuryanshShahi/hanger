@@ -6,9 +6,7 @@ import { BsPlusLg } from "react-icons/bs";
 import { FiFilter } from "react-icons/fi";
 import { format } from "url";
 
-const ProductsSection = (data: {
-  data: { images: string[]; name: string; type: string }[];
-}) => {
+const ProductsSection = (data: { data: any[] }) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
