@@ -6,17 +6,6 @@ import { format } from "url";
 const useProducts = () => {
   const router = useRouter();
   const pathname = usePathname();
-  useEffect(() => {
-    router.replace(
-      format({
-        pathname: pathname,
-        query: {
-          id: filters[0]?.kind?.[0]?.toLowerCase(),
-          type: "models",
-        },
-      })
-    );
-  }, []);
 };
 
 export default useProducts;

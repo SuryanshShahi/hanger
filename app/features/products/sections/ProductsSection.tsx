@@ -7,17 +7,17 @@ import { FiFilter } from "react-icons/fi";
 import { format } from "url";
 
 const ProductsSection = (data: {
-  data: { image: string; name: string; type: string }[];
+  data: { images: string[]; name: string; type: string }[];
 }) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const currentItem = searchParams.get("id");
   const currentType = searchParams.get("type");
   const [page, setPage] = useState(1);
   const products = data?.data;
-  console.log(products?.length);
-  
+  const params = Object.fromEntries(searchParams.entries());
+  console.log({ params });
+
   return (
     <div className="col-span-9 space-y-8">
       <div className="space-y-6">
@@ -42,10 +42,13 @@ const ProductsSection = (data: {
                     format({
                       pathname: pathname,
                       query: {
-                        id: currentItem,
+                        ...params,
                         type: item?.toLowerCase(),
                       },
-                    })
+                    }),
+                    {
+                      scroll: false,
+                    }
                   )
                 }
                 isSelected={currentType === item?.toLowerCase()}
@@ -65,9 +68,7 @@ const ProductsSection = (data: {
                 </div>
                 <img
                   className="rounded-[43px] max-w-[330px] max-h-[330px] h-full w-full"
-                  src={
-                    "https://cdn.sanity.io/images/10qz46jv/production/558cc68ef6ab7b73be6901a2fa2e2d4462b36879-299x315.png"
-                  }
+                  src={item?.images?.[0]}
                 />
                 {/* <Img alt={item?.image} height={330} width={330} isLocal /> */}
               </div>
@@ -94,7 +95,7 @@ const ProductsSection = (data: {
             router.push(
               format({
                 pathname,
-                query: { page: `${selected + 1}` },
+                query: { ...params, page: `${selected + 1}` },
               }),
               {
                 scroll: false,

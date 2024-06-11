@@ -1,17 +1,24 @@
 export const filters = [
   {
-    type: "Shop By Style",
+    id: "material",
+    type: "Material Type",
+    kind: ["Plastic", "Metal", "Wooden"],
+  },
+  {
+    id: "specialty",
+    type: "Shop By Specialty",
     kind: [
-      "Top Hangers",
-      "Bottom Hangers",
-      "Outerwear",
-      "Kids wear",
-      "Intimate Wear",
-      "Footwear",
-      "Accessories",
+      "Hanger with Bar (Plastic)",
+      "Fabric Hangers",
+      "Accessory Hangers",
+      "Wooden Hangers",
+      "Straight Hangers",
+      "Anti-Theft Hangers",
+      "Footwear Hangers",
     ],
   },
   {
+    id: "style",
     type: "Shop By Style",
     kind: [
       "Top Hangers",

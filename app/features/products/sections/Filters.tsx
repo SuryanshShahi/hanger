@@ -7,8 +7,8 @@ const Filters = () => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const currentItem = searchParams.get("id");
-  const currentType = searchParams.get("type");
+  const params = Object.fromEntries(searchParams.entries());
+
   return (
     <div className="col-span-3 space-y-10 lg:block hidden">
       {filters?.map((item, idx) => (
@@ -24,13 +24,18 @@ const Filters = () => {
                     format({
                       pathname: pathname,
                       query: {
-                        id: item1?.toLowerCase(),
-                        type: currentType,
+                        ...params,
+                        [item?.id]: item1?.toLowerCase(),
                       },
-                    })
+                    }),
+                    {
+                      scroll: false,
+                    }
                   )
                 }
-                isSelected={currentItem === item1?.toLowerCase()}
+                isSelected={Object.values(params)?.includes(
+                  item1?.toLowerCase()
+                )}
               />
             ))}
           </ul>

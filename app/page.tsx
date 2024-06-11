@@ -3,7 +3,12 @@ import Home from "./features/home";
 
 export default function Index() {
   return (
-    <PageWrapper>
+    <PageWrapper
+      seo={{
+        metaTitle: "",
+        metaDescription: "",
+      }}
+    >
       <Home />
     </PageWrapper>
   );

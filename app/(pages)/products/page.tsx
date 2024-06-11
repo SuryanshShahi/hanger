@@ -19,7 +19,12 @@ const Page = async () => {
   const data = await getData();
 
   return (
-    <PageWrapper>
+    <PageWrapper
+      seo={{
+        metaTitle: "",
+        metaDescription: "",
+      }}
+    >
       <Products data={data} />
     </PageWrapper>
   );

@@ -54,23 +54,14 @@ export interface Styletype {
 
 const Products = (data: { data: Root[] }) => {
   useProducts();
-  console.log(data?.data);
-  const products = data?.data
-    ?.map((e) => ({
-      image:
-        e?.images?.[0]?.asset?._ref &&
-        urlFor(e?.images?.[0]?.asset?._ref)?.url(),
-      name: e?.name,
-      type: e?._type,
-    }))
-    .filter((r) => r);
+  console.log({ asda: data?.data });
 
   return (
     <div className="space-y-20 mb-20">
       <Banner />
       <div className="grid lg:grid-cols-12 container mx-auto md:px-0 px-5">
         <Filters />
-        <ProductsSection data={products} />
+        <ProductsSection data={data?.data} />
       </div>
     </div>
   );
