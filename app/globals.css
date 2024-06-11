@@ -63,3 +63,21 @@ body {
     opacity: 1;
   }
 }
+/* pagination */
+.pagination a {
+  /* height: 40px;
+  width: 40px; */
+  @apply text-xl font-light;
+}
+.pagination .next,
+.pagination .previous,
+.pagination .next a,
+.pagination .previous a,
+.pagination .break {
+  border: 0;
+  padding: 0;
+}
+
+.pagination li {
+  @apply cursor-pointer border border-gray-500  h-10 w-10 flex justify-center items-center;
+}

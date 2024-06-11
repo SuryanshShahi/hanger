@@ -10,7 +10,7 @@ const Filters = () => {
   const currentItem = searchParams.get("id");
   const currentType = searchParams.get("type");
   return (
-    <div className="col-span-3 space-y-10 md:block hidden">
+    <div className="col-span-3 space-y-10 lg:block hidden">
       {filters?.map((item, idx) => (
         <div key={idx} className="space-y-4">
           <div className="text-xl font-bold">{item?.type}</div>
