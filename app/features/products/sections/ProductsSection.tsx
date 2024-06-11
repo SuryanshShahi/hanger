@@ -1,17 +1,14 @@
-import Img from "@/app/shared/Img";
 import ListItem from "@/app/shared/ListItem";
 import Pagination from "@/app/shared/Pagination/Pagination";
-import Button from "@/app/shared/button/Button";
-import { urlFor } from "@/app/utils/configSanity";
-import { products } from "@/app/utils/static";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { Root } from "postcss";
 import { useState } from "react";
 import { BsPlusLg } from "react-icons/bs";
 import { FiFilter } from "react-icons/fi";
 import { format } from "url";
 
-const ProductsSection = (data: { data: Root[] }) => {
+const ProductsSection = (data: {
+  data: { image: string; name: string; type: string }[];
+}) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
