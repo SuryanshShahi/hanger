@@ -16,7 +16,8 @@ const ProductsSection = (data: {
   const currentType = searchParams.get("type");
   const [page, setPage] = useState(1);
   const products = data?.data;
-  console.log(data?.data?.slice((page - 1) * 20, page * 20));
+  console.log(products?.length);
+  
   return (
     <div className="col-span-9 space-y-8">
       <div className="space-y-6">
