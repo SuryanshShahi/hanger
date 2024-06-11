@@ -56,7 +56,7 @@ const ProductsSection = (data: {
             ))}
           </div>
         </div>
-        <div className="grid pb-10 2xl:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-x-6 gap-y-16">
+        <div className="grid pb-10 2xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-x-6 gap-y-16">
           {products?.slice((page - 1) * 20, page * 20)?.map((item, idx) => (
             <div key={idx} className="space-y-4 group cursor-pointer">
               <div className="rounded-[43px] relative flex justify-center items-center">
@@ -67,7 +67,7 @@ const ProductsSection = (data: {
                   />
                 </div>
                 <img
-                  className="rounded-[43px] max-w-[330px] max-h-[330px] h-full w-full"
+                  className="rounded-[43px] sm:w-[330px] sm:h-[330px] h-full w-full"
                   src={item?.images?.[0]}
                 />
                 {/* <Img alt={item?.image} height={330} width={330} isLocal /> */}
