@@ -5,8 +5,8 @@ const HeroSection = () => {
   return (
     <div className="pb-20 z-10 sm:px-10 px-5">
       <div className="text-primary xl:text-[200px] lg:text-[172px] md:text-[150px] sm:text-[100px] text-[77px] z-10 relative space-y-4">
-        <div className="uppercase">Curtains</div>
-        <div className="uppercase w-fit ml-auto leading-7">& Blinds</div>
+        <div className="uppercase">Hangers</div>
+        <div className="uppercase w-fit ml-auto leading-7">& More</div>
       </div>
       <div className="flex items-end justify-between sm:space-x-10 space-x-5 sm:scale-100 scale-90">
         <div className="space-y-10 -mb-[6%]">
