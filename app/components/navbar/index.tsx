@@ -32,17 +32,24 @@ const Navbar = () => {
       >
         <Img
           alt=""
-          src="/images/icons/logo.webp"
+          src="/images/icons/logo.png"
           isLocal
-          height={35}
-          width={130}
+          height={25}
+          width={284}
           role="button"
           onClick={() => router.push("/")}
         />
         <ul className="lg:flex hidden gap-x-8">
-          {["Home", "Pages", "Portfolio", "Blog", "Shop", "Contact"]?.map(
-            (item, idx) => <ListItem key={idx} name={item} />
-          )}
+          {[
+            { name: "Home", path: "/" },
+            { name: "Our Products", path: "/products" },
+          ]?.map((item, idx) => (
+            <ListItem
+              key={idx}
+              name={item?.name}
+              onClick={() => router.push(item?.path)}
+            />
+          ))}
         </ul>
         <div className="flex items-center gap-x-8">
           <div className="relative">
