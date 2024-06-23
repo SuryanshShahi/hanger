@@ -54,7 +54,7 @@ const EnquiryModal = ({ close }: { close: () => void }) => {
       rows: 4,
     },
   ];
-  const initialValues = {
+  const initialValues: any = {
     name: "",
     email: "",
     companyName: "",
@@ -93,13 +93,16 @@ const EnquiryModal = ({ close }: { close: () => void }) => {
         })
         .catch((err) => {
           console.log(err);
-          close(); 
+          close();
           setSubmitting(false);
         });
     },
   });
   return (
-    <Modal onClose={close} className="space-y-6 max-w-[621px] relative animate-modal">
+    <Modal
+      onClose={close}
+      className="space-y-6 max-w-[621px] relative animate-modal"
+    >
       <div className="flex justify-between">
         <div>
           <div className="flex justify-center items-center h-12 modalLogo bg-primary2 w-12 absolute z-20 mt-2">
@@ -155,9 +158,7 @@ const EnquiryModal = ({ close }: { close: () => void }) => {
               )}
               {errors?.[item?.key] && touched?.[item?.key] ? (
                 <p className="text-red-500 text-[10px] text-right">
-                  {errors?.[item?.key] || (
-                    <p className="text-white text-[10px] text-right">.</p>
-                  )}
+                  {errors?.[item?.key] as string}
                 </p>
               ) : (
                 <p className="text-white text-[10px] text-right">.</p>
