@@ -9,51 +9,57 @@ import Slider from "react-slick";
 const BeautyAndComfort = () => {
   return (
     <>
-      <Slider {...SLICK_SETTING} speed={8000} className="mt-12">
+      <Slider
+        {...SLICK_SETTING}
+        speed={5000}
+        className="mt-12 flex items-center justify-center"
+      >
         {[
-          "Value Collection",
-          "50% Selected Made to Measure Styles",
-          "Value Collection",
-          "50% Selected Made to Measure Styles",
-        ]?.map((item, idx) => (
-          <div key={idx} className="text-black text-2xl text-center">
-            {item}
+          "Customizable Designs",
+          "Durable & Long-Lasting",
+          "Exclusive Discounts",
+          "Bundle Deals Available",
+          "Custom Branding Options",
+        ].map((item, idx) => (
+          <div key={idx} className="flex items-center">
+            <span className="text-black text-2xl">{item}</span>
           </div>
         ))}
       </Slider>
-      <div className="grid lg:grid-cols-2 gap-20 items-center place-items-center px-5">
+
+      <div className="grid lg:grid-cols-2 gap-16 items-center place-items-center px-20">
         <div className="flex sm:flex-row flex-col w-full gap-6">
           <Img
-            src="/images/hero2.jpg"
+            src="/images/hero2.png"
             height={700}
             width={300}
             alt=""
             isLocal
-            className="lg:h-[700px] h-[250px] lg:w-[260px] w-full"
+            className="lg:h-[700px] h-[250px] lg:w-[300px] w-full"
           />
           <Img
-            src="/images/hero2.jpg"
+            src="/images/hero2.png"
             height={700}
             width={300}
             alt=""
             isLocal
-            className="lg:h-[700px] h-[250px] lg:w-[260px] w-full"
+            className="lg:h-[700px] h-[250px] lg:w-[300px] w-full"
           />
         </div>
         <div className="space-y-8">
-          <Heading
-            heading="BEAUTY & COMFORT"
-            subHeading="Choose Our New Home Textile Collection"
-          />
+          <Heading heading="Why Choose Us" subHeading="Unmatched Quality" />
           <p className="text-secondary">
-            Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-            aspernatur aut odit aut fugit.
+            Experience the difference that exceptional craftsmanship and
+            attention to detail make. Our hangers are designed to provide
+            unparalleled support and longevity, ensuring your garments stay in
+            pristine condition.
           </p>
           <div className="space-y-2">
             {[
-              "Exclusive Offers and discounts",
-              "Tips and advice from our experts",
-              "Beautiful inspiration for your new home",
+              "Superior Durability: Built to last with high-quality materials.",
+              "Versatile Designs: Suitable for all types of clothing.",
+              "Eco-Friendly Options: Sustainable choices for a greener future.",
+              "Competitive Pricing: Affordable solutions without compromising on quality.",
             ]?.map((item, idx) => (
               <div key={idx} className="flex items-center gap-x-2">
                 <FaCheck size={16} className="text-primary" />
@@ -62,7 +68,7 @@ const BeautyAndComfort = () => {
             ))}
           </div>
           <Button className="text-xl py-4 !px-14 bg-primary">
-            Find Out More
+            Ready to Upgrade?
           </Button>
         </div>
       </div>

@@ -1,9 +1,9 @@
 export const SLICK_SETTING = {
-  slidesToShow: 3,
+  slidesToShow: 4,
   slidesToScroll: 1,
   infinite: true,
   autoplay: true,
-  autoplaySpeed: 0,
+  autoplaySpeed: 5000,
   cssEase: "linear",
   arrows: false,
   responsive: [

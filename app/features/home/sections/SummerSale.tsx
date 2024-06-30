@@ -17,7 +17,7 @@ const SummerSale = () => {
           <div key={idx} className="space-y-4">
             <div className="bg-white p-14 h-[333px] group">
               <Img
-                src="/images/hero2.jpg"
+                src="/images/hero2.png"
                 height={290}
                 width={250}
                 alt=""

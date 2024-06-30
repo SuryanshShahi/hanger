@@ -34,8 +34,8 @@ const Navbar = () => {
           alt=""
           src="/images/icons/logo.png"
           isLocal
-          height={25}
-          width={284}
+          height={20.22}
+          width={227.2}
           role="button"
           onClick={() => router.push("/")}
         />

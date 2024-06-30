@@ -42,7 +42,7 @@ const LatestPosts = () => {
               className="bg-white relative group cursor-pointer sm:p-10 overflow-hidden p-6 sm:max-w-[400px] w-full"
             >
               <Img
-                src="/images/hero2.jpg"
+                src="/images/hero2.png"
                 height={350}
                 width={350}
                 alt=""

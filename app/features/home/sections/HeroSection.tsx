@@ -15,7 +15,7 @@ const HeroSection = () => {
             <br></br>You deserve it
           </div>
           <Img
-            src="/images/hero2.jpg"
+            src="/images/hero2.png"
             height={407}
             width={326}
             alt=""
@@ -25,7 +25,7 @@ const HeroSection = () => {
         </div>
         <div className="lg:-mt-[105px] md:-mt-24 -mt-20">
           <Img
-            src="/images/hero2.jpg"
+            src="/images/hero2.png"
             height={630}
             width={637}
             alt=""
@@ -35,7 +35,7 @@ const HeroSection = () => {
         </div>
         <div className="-mb-[6%] md:block hidden">
           <Img
-            src="/images/hero2.jpg"
+            src="/images/hero2.png"
             height={302}
             width={175}
             alt=""

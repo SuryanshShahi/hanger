@@ -8,7 +8,7 @@ import Slider from "react-slick";
 const OurCollections = ({
   data,
 }: {
-  data: { title: string; subtitle: string }[];
+  data: { title: string; subtitle: string; image: string }[];
 }) => {
   return (
     <div className="grid grid-cols-12 bg-[#f1efe6] py-20 px-5">
@@ -25,7 +25,7 @@ const OurCollections = ({
               />
               <div className="h-[290px] relative w-[390px] overflow-hidden">
                 <Img
-                  src="/images/hero2.jpg"
+                  src={item.image}
                   height={290}
                   width={390}
                   alt=""

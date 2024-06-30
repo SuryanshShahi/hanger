@@ -11,7 +11,7 @@ const Heading = ({
 }) => {
   return (
     <div className={`space-y-5 w-fit ${className}`}>
-      <div className="text-sm tracking-widest">{heading}</div>
+      <div className="text-sm uppercase tracking-widest">{heading}</div>
       <div className="text-[57px] leading-[60px] max-w-[550px]">
         {subHeading}
       </div>

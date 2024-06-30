@@ -13,20 +13,34 @@ import OurCollections from "./sections/OurCollections";
 const Home = () => {
   const data = [
     {
-      title: "Drapes",
-      subtitle: "asdaada asdad asdad",
+      title: "Top Wear",
+      subtitle: "Find the perfect hangers to keep your tops wrinkle-free and organized.",
+      image: "/images/top-wear-hanger-category.png"
     },
     {
-      title: "Drapes",
-      subtitle: "asdaada asdad asdad",
+      title: "Accessories",
+      subtitle: "Stylish and practical hangers for all your accessory needs",
+      image: "/images/accessories-hanger-category.png"
     },
     {
-      title: "Drapes",
-      subtitle: "asdaada asdad asdad",
+      title: "Kids Wear",
+      subtitle: "Durable and fun hangers designed specifically for children's clothing.",
+      image: "/images/kids-wear-hanger-category.png"
     },
     {
-      title: "Drapes",
-      subtitle: "asdaada asdad asdad",
+      title: "Outerwear",
+      subtitle: "Strong and sturdy hangers to support your heavy outerwear.",
+      image: "/images/outerwear-hanger-category.png"
+    },
+    {
+      title: "Bottom Wear",
+      subtitle: "Specialized hangers to keep your pants and skirts neatly hung.",
+      image: "/images/bottom-wear-hanger-category.png"
+    },
+    {
+      title: "Intimate Wear",
+      subtitle: "Delicate and secure hangers for your intimate wear collection.",
+      image: "/images/intimate-wear-hanger-category.png"
     },
   ];
   return (
@@ -35,19 +49,19 @@ const Home = () => {
         <HeroSection />
         <Tailoring />
       </div>
-      <div className="grid lg:grid-cols-4 sm:grid-cols-2">
+      <div className="grid lg:grid-cols-3 sm:grid-cols-2">
         {data?.map((item, idx) => (
           <div key={idx} className="relative text-white group cursor-pointer">
             <Img
-              src="/images/hero2.jpg"
+              src={item?.image}
               height={710}
-              width={610}
+              width={660}
               alt=""
               isLocal
-              className="min-h-[610px]"
+              className="w-full h-full object-cover"
             />
 
-            <div className="bg-black/40 group-hover:bg-black/60 duration-500 h-full flex flex-col justify-between w-full absolute top-0 p-6">
+            <div className="bg-black/40 group-hover:bg-black/60 duration-500 h-full flex flex-col justify-between w-full absolute top-0 p-6 object-cover">
               <div className="text-2xl">0{idx + 1}.</div>
               <div className="space-y-2">
                 <div className="text-xl">{item?.title}</div>
