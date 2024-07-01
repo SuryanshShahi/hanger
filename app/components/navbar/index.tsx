@@ -1,9 +1,8 @@
+import EnquiryModal from "@/app/features/products/sections/EnquiryModal";
 import Img from "@/app/shared/Img";
 import ListItem from "@/app/shared/ListItem";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-import { FiSearch } from "react-icons/fi";
-import { SlBag } from "react-icons/sl";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
   useEffect(() => {
@@ -24,6 +23,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", slideNav);
   }, []);
   const router = useRouter();
+  const [openModal, setOpenModal] = useState("");
   return (
     <div className="sticky z-20 sm:px-10 px-5" id="navbar">
       <div
@@ -43,11 +43,16 @@ const Navbar = () => {
           {[
             { name: "Home", path: "/" },
             { name: "Our Products", path: "/products" },
+            { name: "Contact Us", action: "CONTACT_MODAL" },
           ]?.map((item, idx) => (
             <ListItem
               key={idx}
               name={item?.name}
-              onClick={() => router.push(item?.path)}
+              onClick={() =>
+                item?.action
+                  ? setOpenModal(item?.action)
+                  : router.push(item?.path)
+              }
             />
           ))}
         </ul>
@@ -61,6 +66,9 @@ const Navbar = () => {
           <FiSearch className="h-[26px] w-[26px]" />
         </div> */}
       </div>
+      {openModal === "CONTACT_MODAL" && (
+        <EnquiryModal close={() => setOpenModal("")} />
+      )}
     </div>
   );
 };
