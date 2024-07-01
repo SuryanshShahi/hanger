@@ -30,20 +30,20 @@ const BeautyAndComfort = () => {
       <div className="grid lg:grid-cols-2 gap-16 items-center place-items-center px-20">
         <div className="flex sm:flex-row flex-col w-full gap-6">
           <Img
-            src="/images/hero2.png"
+            src="/images/unmatched-quality-1.png"
             height={700}
-            width={300}
+            width={425}
             alt=""
             isLocal
-            className="lg:h-[700px] h-[250px] lg:w-[300px] w-full"
+            className="lg:h-[700px] h-[250px] lg:w-[300px] w-full object-cover"
           />
           <Img
-            src="/images/hero2.png"
+            src="/images/unmatched-quality-2.png"
             height={700}
-            width={300}
+            width={425}
             alt=""
             isLocal
-            className="lg:h-[700px] h-[250px] lg:w-[300px] w-full"
+            className="lg:h-[700px] h-[250px] lg:w-[300px] w-full object-cover"
           />
         </div>
         <div className="space-y-8">

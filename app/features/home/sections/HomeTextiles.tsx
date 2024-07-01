@@ -26,7 +26,7 @@ const HomeTextiles = () => {
           className="h-[610px] w-full lg:max-w-[500px]"
         />
         <div className="p-12 bg-black md:absolute lg:text-4xl text-3xl text-center text-white bottom-0 w-full lg:max-w-[360px] lg:right-0">
-        Elegant Solutions for Every Closet
+        Elegant Solutions for Every Fashion
         </div>
       </div>
       <div className="space-y-8">

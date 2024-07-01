@@ -5,8 +5,8 @@ const Banner = () => {
       <div className="text-5xl font-bold text-center"> Shop</div>
       <div className="text-[40px] bg-primary2 text-white text-center p-8">
         <div className="font-bold">Member Exclusive</div>
-        <p>15% off everything + extra $10 off for plus status</p>
-        <div className="text-xl mt-10">Not a Member? Join now to shop.</div>
+        <p>Early Access to New Collections + Special Deals</p>
+        <div className="text-xl mt-10">Not a Member? Contact now to shop our exclusive catalog.</div>
       </div>
     </div>
   );

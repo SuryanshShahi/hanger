@@ -10,12 +10,12 @@ const HeroSection = () => {
       </div>
       <div className="flex items-end justify-between sm:space-x-10 space-x-5 sm:scale-100 scale-90">
         <div className="space-y-10 -mb-[6%]">
-          <div className="text-[13px] uppercase sm:block hidden leading-7 tracking-widest">
-            Make your home look<br></br> it&apos;s very best , no compromise.
+          <div className="text-[13px] uppercase font-semibold sm:block hidden leading-7 tracking-widest">
+            Discover Premium Quality Hangers<br></br> Perfectly Crafted for Every business needs.
             <br></br>You deserve it
           </div>
           <Img
-            src="/images/hero2.png"
+            src="/images/hero1.png"
             height={407}
             width={326}
             alt=""
@@ -35,7 +35,7 @@ const HeroSection = () => {
         </div>
         <div className="-mb-[6%] md:block hidden">
           <Img
-            src="/images/hero2.png"
+            src="/images/hero3.png"
             height={302}
             width={175}
             alt=""

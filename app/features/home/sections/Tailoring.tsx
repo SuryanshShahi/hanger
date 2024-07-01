@@ -27,7 +27,7 @@ const Tailoring = () => {
       <div className="grid md:grid-cols-2 space-y-10 px-5 container-sm">
         <Heading
           heading="ELEGANCE MEETS DURABILITY"
-          subHeading="Perfect Hangers for Every Closet"
+          subHeading="Perfect Hangers for Every Use"
         />
         <div className="space-y-8 text-secondary">
           <p>
@@ -55,7 +55,7 @@ const Tailoring = () => {
               <div className="text-2xl max-w-[120px]">{item.title}</div>
               <div className="flex items-center w-fit">
                 <div className="w-0 text-nowrap overflow-hidden group-hover:w-20 duration-500">
-                  Read More
+                  View All
                 </div>
                 <IoIosArrowRoundForward className="h-[30px] w-[30px]" />
               </div>
