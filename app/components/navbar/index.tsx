@@ -51,7 +51,7 @@ const Navbar = () => {
               onClick={() =>
                 item?.action
                   ? setOpenModal(item?.action)
-                  : router.push(item?.path)
+                  : item?.path && router.push(item?.path)
               }
             />
           ))}
