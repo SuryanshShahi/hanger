@@ -1,11 +1,11 @@
-import EnquiryModal from "@/app/features/products/sections/EnquiryModal";
 import Img from "@/app/shared/Img";
 import ListItem from "@/app/shared/ListItem";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { SlBag } from "react-icons/sl";
-import EnquiryModal from "../../features/products/sections/EnquiryModal"
+import EnquiryModal from "@/app/features/products/sections/EnquiryModal";
+
 
 const Navbar = () => {
   const router = useRouter();
