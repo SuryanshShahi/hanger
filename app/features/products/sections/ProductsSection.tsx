@@ -1,18 +1,10 @@
-import Img from "@/app/shared/Img";
 import ListItem from "@/app/shared/ListItem";
 import Pagination from "@/app/shared/Pagination/Pagination";
-import Button from "@/app/shared/button/Button";
-import Modal from "@/app/shared/modal/Modal";
-import { enquiry } from "@/app/utils/schemas";
-import { useFormik } from "formik";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { BsPlusLg } from "react-icons/bs";
 import { FiFilter } from "react-icons/fi";
 import { format } from "url";
-import { AiOutlineUsergroupAdd } from "react-icons/ai";
-import { AiOutlineUser } from "react-icons/ai";
-import { MdOutlineEmail } from "react-icons/md";
 import EnquiryModal from "./EnquiryModal";
 
 const ProductsSection = (data: { data: any[] }) => {
@@ -24,12 +16,13 @@ const ProductsSection = (data: { data: any[] }) => {
   const products = data?.data;
   const params = Object.fromEntries(searchParams.entries());
   const [isActive, setIsActive] = useState(false);
+console.log({params});
 
   return (
     <>
       <div className="col-span-9 space-y-8">
         <div className="space-y-6">
-          <h1 className="uppercase text-5xl font-bold">Wooden</h1>
+          <h1 className="uppercase text-5xl font-bold">{params?.material}</h1>
           <p className="text-xl">
             Its easy to transform your bedroom interior with our great selection
             of accessories.
@@ -81,20 +74,16 @@ const ProductsSection = (data: { data: any[] }) => {
                     className="rounded-[43px] sm:w-[330px] sm:h-[330px] h-full w-full"
                     src={item?.images?.[0]}
                   />
-                  {/* <Img alt={item?.image} height={330} width={330} isLocal /> */}
                 </div>
-                <div className="text-xl font-bold">{item?.name}</div>
-                <div className="flex gap-x-1">
-                  {["#9E6344", "#8F8E73"]?.map((color, idx1) => (
-                    <div
-                      className="h-3 w-3 rounded-full"
-                      key={idx1}
-                      style={{ backgroundColor: color }}
-                    />
-                  ))}
-                </div>
-                <div className="text-[26px] capitalize font-bold">
-                  {item?.type}
+
+                <div className="gap-y-4">
+                  <div className="text-[26px] capitalize font-bold">
+                    {item?.name}
+                  </div>
+                  <div className="text-xl font-bold">
+                    {item?.hook} {item?.styletype?.[0]}
+                  </div>
+                  <div className="text-xl font-bold">L: 25 CM x H: 40CM</div>
                 </div>
               </div>
             ))}
