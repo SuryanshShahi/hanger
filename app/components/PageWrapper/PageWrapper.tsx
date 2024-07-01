@@ -27,27 +27,13 @@ const PageWrapper: FC<PropsWithChildren<IPageWraps>> = ({
       setIsActive(false);
     }
   };
-  typeof window !== "undefined" && window.addEventListener("scroll", slideNav);
-  let GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", slideNav);
+  }
   return (
     <Suspense fallback={<div>...Loading</div>}>
       <Fragment>
         <Head>
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${GTM_ID}`}
-          ></script>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-                    gtag('config', '${GTM_ID}',{
-                      page_path: window.location.pathname,
-                    })`,
-            }}
-          />
-          {/* <GoogleTagManager gtmId={GTM_ID || ""} /> */}
           <title>{seo?.metaTitle ?? metaContent.TITLE}</title>
           <meta
             name="description"

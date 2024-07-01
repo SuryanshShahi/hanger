@@ -16,8 +16,6 @@ const ProductsSection = (data: { data: any[] }) => {
   const products = data?.data;
   const params = Object.fromEntries(searchParams.entries());
   const [isActive, setIsActive] = useState(false);
-console.log({params});
-
   return (
     <>
       <div className="col-span-9 space-y-8">
@@ -29,36 +27,8 @@ console.log({params});
           </p>
         </div>
         <div className="space-y-6 flex flex-col items-center">
-          <div className="flex justify-between w-full">
-            <div className="flex items-center gap-x-2">
-              <FiFilter /> <div className="uppercase">Filter & Sort</div>
-            </div>
-            <div className="flex gap-x-8 [&>*]:cursor-pointer">
-              {["Models", "Products"]?.map((item, idx) => (
-                <ListItem
-                  key={idx}
-                  name={item}
-                  onClick={() =>
-                    router.push(
-                      format({
-                        pathname: pathname,
-                        query: {
-                          ...params,
-                          type: item?.toLowerCase(),
-                        },
-                      }),
-                      {
-                        scroll: false,
-                      }
-                    )
-                  }
-                  isSelected={currentType === item?.toLowerCase()}
-                />
-              ))}
-            </div>
-          </div>
           <div className="grid pb-10 2xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-x-6 gap-y-16">
-            {products?.slice((page - 1) * 20, page * 20)?.map((item, idx) => (
+            {products?.slice((page - 1) * 21, page * 21)?.map((item, idx) => (
               <div key={idx} className="space-y-4 group cursor-pointer">
                 <div className="rounded-[43px] relative flex justify-center items-center">
                   <div
@@ -83,14 +53,18 @@ console.log({params});
                   <div className="text-xl font-bold">
                     {item?.hook} {item?.styletype?.[0]}
                   </div>
-                  <div className="text-xl font-bold">L: 25 CM x H: 40CM</div>
+                  {(item?.length || item?.height) && (
+                    <div className="text-xl font-bold">
+                      L: {item?.length} CM x H: {item?.height} CM
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
           </div>
           <Pagination
             page={page}
-            totalPages={Math.ceil(products?.length / 20)}
+            totalPages={Math.ceil(products?.length / 21)}
             active={({ selected }: any) => {
               router.push(
                 format({

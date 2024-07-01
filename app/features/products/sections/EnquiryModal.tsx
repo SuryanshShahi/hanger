@@ -7,7 +7,13 @@ import { AiOutlineUser, AiOutlineUsergroupAdd } from "react-icons/ai";
 import { MdOutlineEmail } from "react-icons/md";
 import emailjs from "@emailjs/browser";
 
-const EnquiryModal = ({ close }: { close: () => void }) => {
+const EnquiryModal = ({
+  close,
+  className,
+}: {
+  close: () => void;
+  className?: string;
+}) => {
   const InputFields = [
     {
       label: "Name",
@@ -20,6 +26,7 @@ const EnquiryModal = ({ close }: { close: () => void }) => {
           className="absolute top-3 left-4 text-gray-400"
         />
       ),
+      required: true,
     },
     {
       label: "Company Name",
@@ -32,6 +39,7 @@ const EnquiryModal = ({ close }: { close: () => void }) => {
           className="absolute top-3 left-4 text-gray-400"
         />
       ),
+      required: true,
     },
     {
       label: "Email Address",
@@ -44,6 +52,7 @@ const EnquiryModal = ({ close }: { close: () => void }) => {
           className="absolute top-3 left-4 text-gray-400"
         />
       ),
+      required: true,
     },
     {
       label: "Any Notes (Optional)",
@@ -52,6 +61,7 @@ const EnquiryModal = ({ close }: { close: () => void }) => {
       type: "email",
       key: "description",
       rows: 4,
+      required: false,
     },
   ];
   const initialValues: any = {
@@ -76,9 +86,9 @@ const EnquiryModal = ({ close }: { close: () => void }) => {
     validationSchema: enquiry,
     onSubmit: (data) => {
       var templateParams = {
-        name: values?.name,
-        email: values?.email,
-        message: `name:${values?.name}\nemail:${values?.email}\ncompany:${values?.companyName}\ndescription:${values?.description}`,
+        name: data?.name,
+        email: data?.email,
+        message: `name:${data?.name}\nemail:${data?.email}\ncompany:${data?.companyName}\ndescription:${data?.description}`,
       };
       emailjs
         .send(
@@ -89,7 +99,6 @@ const EnquiryModal = ({ close }: { close: () => void }) => {
         )
         .then((res) => {
           setSubmitting(false);
-          close();
         })
         .catch((err) => {
           console.log(err);
@@ -101,7 +110,7 @@ const EnquiryModal = ({ close }: { close: () => void }) => {
   return (
     <Modal
       onClose={close}
-      className="space-y-6 max-w-[621px] relative animate-modal"
+      className={`space-y-6 max-w-[621px] relative animate-modal ${className}`}
     >
       <div className="flex justify-between">
         <div>
@@ -126,7 +135,8 @@ const EnquiryModal = ({ close }: { close: () => void }) => {
         {InputFields?.map((item, idx) => (
           <div className="space-y-1" key={idx}>
             <h4 className="text-xs font-medium">
-              {item?.label} <span className="text-red-600">*</span>
+              {item?.label}{" "}
+              {item?.required && <span className="text-red-600">*</span>}
             </h4>
             <div className="relative">
               {item?.rows ? (

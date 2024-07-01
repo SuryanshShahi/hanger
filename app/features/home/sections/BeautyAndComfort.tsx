@@ -27,7 +27,7 @@ const BeautyAndComfort = () => {
         ))}
       </Slider>
 
-      <div className="grid lg:grid-cols-2 gap-16 items-center place-items-center px-20">
+      <div className="grid lg:grid-cols-2 gap-16 gap-x-20 items-center place-items-center container-sm mx-auto">
         <div className="flex sm:flex-row flex-col w-full gap-6">
           <Img
             src="/images/unmatched-quality-1.png"

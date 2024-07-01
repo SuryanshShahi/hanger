@@ -4,6 +4,8 @@ import Banner from "./sections/Banner";
 import Filters from "./sections/Filters";
 import ProductsSection from "./sections/ProductsSection";
 import useProducts from "./useProducts";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 export interface Root {
   specialty: Specialty[];
   _createdAt: string;
@@ -51,11 +53,13 @@ export interface Styletype {
   _ref: string;
   _type: string;
 }
-
 const Products = (data: { data: Root[] }) => {
+  const router = useRouter();
   useProducts();
   console.log({ asda: data?.data });
-
+  useEffect(() => {
+    router.push("/products?material=Plastic");
+  }, []);
   return (
     <div className="space-y-20 mb-20">
       <Banner />

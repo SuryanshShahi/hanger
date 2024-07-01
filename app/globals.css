@@ -5,6 +5,10 @@
   font-family: span;
   src: url("../public/fonts/span.otf");
 }
+@font-face {
+  font-family: dm-sans;
+  src: url("../public/fonts/DM_Sans.ttf");
+}
 body {
   font-family: span;
 }
@@ -93,4 +97,34 @@ body {
 
 .pagination li {
   @apply cursor-pointer border border-gray-500  md:h-10 md:w-10 h-6 w-6 flex justify-center items-center;
+}
+
+#sideBar {
+  animation: sideNav 0.4s linear forwards;
+  z-index: 999;
+}
+
+@keyframes sideNav {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-accordion {
+  animation: accordion 0.3s ease;
+}
+@keyframes accordion {
+  from {
+    opacity: 0;
+    margin-left: -100%;
+  }
+  to {
+    opacity: 1;
+  }
 }

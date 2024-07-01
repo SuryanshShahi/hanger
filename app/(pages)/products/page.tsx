@@ -11,15 +11,15 @@ const getData = async (data1: any) => {
   (!defined("${data1?.specialty}") || specialty[]->name == "${data1?.specialty}") ||
   (!defined("${data1.hook}") || hook[0]->name == "${data1.hook}")
 ] | order(_createdAt) {
-  name, 
+   name, length, height, 
   "images": images[].asset->url,
   "styletype": styletype[]->name,
   "material": material->name,
   "hook": hook[0]->name,
-  "specialty": specialty[]->name
+  "specialty": specialty[]->name,
 }
 `
-      : `*[_type == "hanger"] | order(_createdAt) {name,
+      : `*[_type == "hanger"] | order(_createdAt) { name, length, height,
     "images": images[].asset->url,
     "styletype" : styletype[]->name,
     "material" : material->name,
@@ -32,19 +32,12 @@ const getData = async (data1: any) => {
   return data;
 };
 const Page = async (request: any) => {
-  console.log({ urlurlurl: request?.searchParams });
+  console.log({ urlulurl: request?.searchParams });
 
-  // const searchParams = useSearchParams();
-  // const params = Object.fromEntries(searchParams.entries());
   const data = await getData(request?.searchParams);
 
   return (
-    <PageWrapper
-      seo={{
-        metaTitle: "",
-        metaDescription: "",
-      }}
-    >
+    <PageWrapper>
       <Products data={data} />
     </PageWrapper>
   );

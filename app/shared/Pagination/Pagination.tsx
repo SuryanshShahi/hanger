@@ -1,7 +1,6 @@
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import ReactPaginate from "react-paginate";
 import { usePagination } from "./views/usePagination";
-import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
-import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 
 const Pagination = (props: any) => {
   const { width } = usePagination();
