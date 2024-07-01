@@ -25,9 +25,9 @@ const Navbar = () => {
   }, []);
   const router = useRouter();
   return (
-    <div className="sticky z-20 px-5" id="navbar">
+    <div className="sticky z-20 sm:px-10 px-5" id="navbar">
       <div
-        className="flex items-center z-10 container-lg justify-between py-10"
+        className="flex items-center z-10 container-lg justify-between py-7"
         id="navbar"
       >
         <Img
@@ -51,7 +51,7 @@ const Navbar = () => {
             />
           ))}
         </ul>
-        <div className="flex items-center gap-x-8">
+        {/* <div className="flex items-center gap-x-8">
           <div className="relative">
             <SlBag className="h-[34px] w-[22px]" />
             <div className="h-[15px] w-[15px] bg-primary flex items-center justify-center text-[10px] text-white rounded-full absolute -right-1 font-bold bottom-0">
@@ -59,7 +59,7 @@ const Navbar = () => {
             </div>
           </div>
           <FiSearch className="h-[26px] w-[26px]" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

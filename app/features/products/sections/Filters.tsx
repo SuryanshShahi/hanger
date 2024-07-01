@@ -25,7 +25,7 @@ const Filters = () => {
                       pathname: pathname,
                       query: {
                         ...params,
-                        [item?.id]: item1?.toLowerCase(),
+                        [item?.id]: item1,
                       },
                     }),
                     {
@@ -33,9 +33,7 @@ const Filters = () => {
                     }
                   )
                 }
-                isSelected={Object.values(params)?.includes(
-                  item1?.toLowerCase()
-                )}
+                isSelected={Object.values(params)?.includes(item1)}
               />
             ))}
           </ul>
