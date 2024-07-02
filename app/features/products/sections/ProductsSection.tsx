@@ -51,7 +51,7 @@ const ProductsSection = (data: { data: any[] }) => {
                     {item?.name}
                   </div>
                   <div className="text-xl font-sans">
-                    {item?.hook} {item?.styletype?.[0]}
+                    {item?.material} {item?.styletype?.[0]}
                   </div>
                   {(item?.length || item?.height) && (
                     <div className="text-xl font-sans">
