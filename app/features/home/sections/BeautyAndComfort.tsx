@@ -5,8 +5,10 @@ import { SLICK_SETTING } from "@/app/utils/constant";
 import React from "react";
 import { FaCheck } from "react-icons/fa";
 import Slider from "react-slick";
+import { useRouter } from "next/navigation";
 
 const BeautyAndComfort = () => {
+  const router = useRouter();
   return (
     <>
       <Slider
@@ -48,7 +50,7 @@ const BeautyAndComfort = () => {
         </div>
         <div className="space-y-8">
           <Heading heading="Why Choose Us" subHeading="Unmatched Quality" />
-          <p className="text-secondary">
+          <p className="text-secondary font-sans">
             Experience the difference that exceptional craftsmanship and
             attention to detail make. Our hangers are designed to provide
             unparalleled support and longevity, ensuring your garments stay in
@@ -63,11 +65,11 @@ const BeautyAndComfort = () => {
             ]?.map((item, idx) => (
               <div key={idx} className="flex items-center gap-x-2">
                 <FaCheck size={16} className="text-primary" />
-                <div>{item}</div>
+                <div className="font-sans py-1">{item}</div>
               </div>
             ))}
           </div>
-          <Button className="text-xl py-4 !px-14 bg-primary">
+          <Button className="text-xl py-4 !px-14 bg-primary" onClick={() => router.push("/products")}>
             Ready to Upgrade?
           </Button>
         </div>

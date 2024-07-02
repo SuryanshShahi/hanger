@@ -29,7 +29,7 @@ const Tailoring = () => {
           heading="ELEGANCE MEETS DURABILITY"
           subHeading="Perfect Hangers for Every Use"
         />
-        <div className="space-y-8 text-secondary">
+        <div className="space-y-8 text-secondary font-sans">
           <p>
             Our hangers are crafted with the highest quality materials to ensure they provide long-lasting support for your garments.
           </p>
@@ -38,11 +38,11 @@ const Tailoring = () => {
           </p>
         </div>
       </div>
-      <div className="grid lg:grid-cols-4 px-5 sm:grid-cols-2">
+      <div className="grid lg:grid-cols-4 px-4 sm:grid-cols-2 ">
         {measurements?.map((item, idx) => (
           <div key={idx}>
             <div
-              className={`space-y-10 group cursor-pointer ${
+              className={`space-y-8 group cursor-pointer ${
                 idx === 1
                   ? "lg:border-r border-r-0"
                   : idx !== measurements?.length - 1
@@ -54,9 +54,9 @@ const Tailoring = () => {
               <img src={item.img} alt={item.title} className="w-20 h-20 object-cover" />
               <div className="text-2xl max-w-[120px]">{item.title}</div>
               <div className="flex items-center w-fit">
-                <div className="w-0 text-nowrap overflow-hidden group-hover:w-20 duration-500">
+              <a href="/products"><div className="w-0 text-nowrap overflow-hidden group-hover:w-20 duration-500">
                   View All
-                </div>
+                </div></a>
                 <IoIosArrowRoundForward className="h-[30px] w-[30px]" />
               </div>
             </div>

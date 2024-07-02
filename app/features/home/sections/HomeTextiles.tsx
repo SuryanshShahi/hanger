@@ -34,10 +34,10 @@ const HomeTextiles = () => {
           heading="Style Meets Function"
           subHeading="Explore the Perfect Hangers for Your Closet"
         />
-        <p className="text-secondary">
+        <p className="text-secondary font-sans">
         Discover the versatility and quality of our hanger collections, meticulously crafted to meet diverse wardrobe needs. Our range combines functionality with sleek design, ensuring your garments are always impeccably presented.
         </p>
-        <ul>
+        <ul className="text-secondary font-sans">
           <li><strong>Premium Materials:</strong> Crafted from durable wood and high-grade plastics.</li>
           <li><strong>Customizable Options:</strong> Tailor-made solutions to suit every closet size and style preference.</li>
         </ul>

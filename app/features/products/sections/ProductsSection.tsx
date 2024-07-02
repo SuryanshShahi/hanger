@@ -47,16 +47,18 @@ const ProductsSection = (data: { data: any[] }) => {
                 </div>
 
                 <div className="gap-y-4">
-                  <div className="text-[26px] capitalize font-bold">
+                  <div className="text-[24px] capitalize font-bold">
                     {item?.name}
                   </div>
-                  <div className="text-xl font-bold">
+                  <div className="text-xl font-sans">
                     {item?.hook} {item?.styletype?.[0]}
                   </div>
                   {(item?.length || item?.height) && (
-                    <div className="text-xl font-bold">
-                      L: {item?.length} CM x H: {item?.height} CM
-                    </div>
+                    <div className="text-xl font-sans">
+                    {item?.length && `L: ${item.length} CM`}
+                    {item?.length && item?.height && " x "}
+                    {item?.height && `H: ${item.height} CM`}
+                  </div>
                   )}
                 </div>
               </div>

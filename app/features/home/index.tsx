@@ -65,7 +65,7 @@ const Home = () => {
               <div className="text-2xl">0{idx + 1}.</div>
               <div className="space-y-2">
                 <div className="text-xl">{item?.title}</div>
-                <div className="text-sm">{item?.subtitle}</div>
+                <div className="text-sm font-sans">{item?.subtitle}</div>
                 <IoIosArrowRoundForward className="w-[30px] h-0 group-hover:h-[30px] duration-500 group-hover:!mt-6" />
               </div>
             </div>
