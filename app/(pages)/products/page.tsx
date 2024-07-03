@@ -34,10 +34,10 @@ const getFilters = async () => {
   const res3 = await client.fetch(filters[2]);
   const res4 = await client.fetch(filters[3]);
   return {
-    styleTypes: res1.map((e) => e?.name),
-    specialtyType: res2.map((e) => e?.name),
-    materialType: res3.map((e) => e?.name),
-    hookTypes: res4.map((e) => e?.name),
+    styleTypes: res1.map((e: any) => e?.name),
+    specialtyType: res2.map((e: any) => e?.name),
+    materialType: res3.map((e: any) => e?.name),
+    hookTypes: res4.map((e: any) => e?.name),
   };
 };
 const Page = async (request: any) => {
