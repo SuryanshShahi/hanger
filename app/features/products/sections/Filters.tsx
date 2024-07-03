@@ -31,7 +31,7 @@ const Filters = ({ filters }: { filters: any }) => {
     },
   ];
   console.log(params);
-  
+
   return (
     <div className="col-span-3 space-y-10 lg:block hidden">
       <div className="flex items-center gap-x-2">
@@ -41,7 +41,7 @@ const Filters = ({ filters }: { filters: any }) => {
         <div key={idx} className="space-y-4">
           <div className="text-xl font-bold">{item?.type}</div>
           <ul className="space-y-2 [&>*]:cursor-pointer">
-            {item?.kind?.map((item1, idx1) => (
+            {item?.kind?.map((item1: any, idx1: number) => (
               <ListItem
                 key={idx1}
                 name={item1}
