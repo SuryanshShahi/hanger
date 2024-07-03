@@ -98,11 +98,12 @@ const EnquiryModal = ({
           process.env.NEXT_PUBLIC_PUBLIC_KEY
         )
         .then((res) => {
+          console.log(res);
+
           setSubmitting(false);
         })
         .catch((err) => {
           console.log(err);
-          close();
           setSubmitting(false);
         });
     },

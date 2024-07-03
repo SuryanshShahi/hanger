@@ -1,9 +1,7 @@
-import ListItem from "@/app/shared/ListItem";
 import Pagination from "@/app/shared/Pagination/Pagination";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { BsPlusLg } from "react-icons/bs";
-import { FiFilter } from "react-icons/fi";
 import { format } from "url";
 import EnquiryModal from "./EnquiryModal";
 
@@ -16,6 +14,8 @@ const ProductsSection = (data: { data: any[] }) => {
   const products = data?.data;
   const params = Object.fromEntries(searchParams.entries());
   const [isActive, setIsActive] = useState(false);
+  console.log({ ddddd: data });
+
   return (
     <>
       <div className="col-span-9 space-y-8">
@@ -55,10 +55,10 @@ const ProductsSection = (data: { data: any[] }) => {
                   </div>
                   {(item?.length || item?.height) && (
                     <div className="text-xl font-sans">
-                    {item?.length && `L: ${item.length} CM`}
-                    {item?.length && item?.height && " x "}
-                    {item?.height && `H: ${item.height} CM`}
-                  </div>
+                      {item?.length && `L: ${item.length} CM`}
+                      {item?.length && item?.height && " x "}
+                      {item?.height && `H: ${item.height} CM`}
+                    </div>
                   )}
                 </div>
               </div>

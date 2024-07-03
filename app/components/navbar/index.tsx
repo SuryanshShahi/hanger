@@ -34,11 +34,6 @@ const Navbar = () => {
       key: "contact",
     },
   ];
-  console.log({
-    asdasadad: pathname
-      ?.toLowerCase()
-      .includes(routes?.[0]?.key?.toLowerCase()),
-  });
 
   return (
     <>

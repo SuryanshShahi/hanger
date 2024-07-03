@@ -1,11 +1,10 @@
 "use client";
-import { urlFor } from "@/app/utils/configSanity";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 import Banner from "./sections/Banner";
 import Filters from "./sections/Filters";
 import ProductsSection from "./sections/ProductsSection";
 import useProducts from "./useProducts";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
 export interface Root {
   specialty: Specialty[];
   _createdAt: string;
@@ -53,19 +52,20 @@ export interface Styletype {
   _ref: string;
   _type: string;
 }
-const Products = (data: { data: Root[] }) => {
+const Products = ({ data, filters }: { data: Root[]; filters: any }) => {
   const router = useRouter();
   useProducts();
-  console.log({ asda: data?.data });
   useEffect(() => {
     router.push("/products?material=Plastic");
   }, []);
+  console.log({ filters1: filters });
+
   return (
     <div className="space-y-20 mb-20">
       <Banner />
       <div className="grid lg:grid-cols-12 container mx-auto md:px-0 px-5">
-        <Filters />
-        <ProductsSection data={data?.data} />
+        <Filters filters={filters} />
+        <ProductsSection data={data} />
       </div>
     </div>
   );
