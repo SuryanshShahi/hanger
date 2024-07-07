@@ -1,6 +1,4 @@
 "use client";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 import Banner from "./sections/Banner";
 import Filters from "./sections/Filters";
 import ProductsSection from "./sections/ProductsSection";
@@ -53,19 +51,14 @@ export interface Styletype {
   _type: string;
 }
 const Products = ({ data, filters }: { data: Root[]; filters: any }) => {
-  const router = useRouter();
   useProducts();
-  useEffect(() => {
-    router.push("/products?material=Plastic");
-  }, []);
-  console.log({ filters1: filters });
 
   return (
     <div className="space-y-20 mb-20">
       <Banner />
-      <div className="grid lg:grid-cols-12 container mx-auto md:px-0 px-5">
+      <div className="grid lg:grid-cols-12 lg:container mx-auto md:px-0 gap-x-10 !px-5">
         <Filters filters={filters} />
-        <ProductsSection data={data} />
+        <ProductsSection data={data} filters={filters} />
       </div>
     </div>
   );

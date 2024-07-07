@@ -1,9 +1,16 @@
 import ListItem from "@/app/shared/ListItem";
+import Chip from "@/app/shared/cards/Chip";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { FiFilter } from "react-icons/fi";
 import { format } from "url";
 
-const Filters = ({ filters }: { filters: any }) => {
+const Filters = ({
+  filters,
+  isSidebar,
+}: {
+  filters: any;
+  isSidebar?: boolean;
+}) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -30,12 +37,31 @@ const Filters = ({ filters }: { filters: any }) => {
       kind: filters?.hookTypes,
     },
   ];
-  console.log(params);
 
   return (
-    <div className="col-span-3 space-y-10 lg:block hidden">
-      <div className="flex items-center gap-x-2">
+    <div
+      className={`col-span-3 space-y-10 ${isSidebar ? "" : "lg:block hidden"}`}
+    >
+      <div className="flex items-center gap-x-2 ">
         <FiFilter /> <div className="uppercase">Filters</div>
+        {Object.values({ ...params, page: null })?.filter((e) => e !== null)
+          ?.length > 0 && (
+          <Chip
+            className="ml-auto !pr-4"
+            title="Clear Filters"
+            onClick={() => {
+              router.push(
+                format({
+                  pathname: pathname,
+                  query: "",
+                }),
+                {
+                  scroll: false,
+                }
+              );
+            }}
+          />
+        )}
       </div>
       {filter?.map((item, idx) => (
         <div key={idx} className="space-y-4">
@@ -45,7 +71,7 @@ const Filters = ({ filters }: { filters: any }) => {
               <ListItem
                 key={idx1}
                 name={item1}
-                onClick={() =>
+                onClick={() => {
                   router.push(
                     format({
                       pathname: pathname,
@@ -57,9 +83,10 @@ const Filters = ({ filters }: { filters: any }) => {
                     {
                       scroll: false,
                     }
-                  )
-                }
+                  );
+                }}
                 isSelected={Object.values(params)?.includes(item1)}
+                withCheck
               />
             ))}
           </ul>

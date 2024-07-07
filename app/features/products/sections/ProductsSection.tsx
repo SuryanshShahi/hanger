@@ -1,30 +1,74 @@
 import Pagination from "@/app/shared/Pagination/Pagination";
+import Chip from "@/app/shared/cards/Chip";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { BsPlusLg } from "react-icons/bs";
 import { format } from "url";
 import EnquiryModal from "./EnquiryModal";
+import { FiFilter } from "react-icons/fi";
+import Filters from "./Filters";
+import Img from "@/app/shared/Img";
 
-const ProductsSection = (data: { data: any[] }) => {
+const ProductsSection = ({ data, filters }: { data: any[]; filters: any }) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const currentType = searchParams.get("type");
   const [page, setPage] = useState(1);
-  const products = data?.data;
+  const products = data;
   const params = Object.fromEntries(searchParams.entries());
-  const [isActive, setIsActive] = useState(false);
-  console.log({ ddddd: data });
+  const [isActive, setIsActive] = useState("");
+  console.log({ data });
 
   return (
     <>
-      <div className="col-span-9 space-y-8">
-        <div className="space-y-6">
-          <h1 className="uppercase text-5xl font-bold">{params?.material}</h1>
-          <p className="text-xl">
-            Its easy to transform your bedroom interior with our great selection
-            of accessories.
-          </p>
+      <div className="lg:col-span-9 space-y-8">
+        <div className="flex lg:hidden items-center gap-x-2">
+          <FiFilter />
+          <div className="uppercase" onClick={() => setIsActive("SIDEBAR")}>
+            Filters
+          </div>
+          {Object.values({ ...params, page: null })?.filter((e) => e !== null)
+            ?.length > 0 && (
+            <Chip
+              className="ml-auto !pr-4"
+              title="Clear Filters"
+              onClick={() => {
+                router.push(
+                  format({
+                    pathname: pathname,
+                    query: "",
+                  }),
+                  {
+                    scroll: false,
+                  }
+                );
+              }}
+            />
+          )}
+        </div>
+        <div className="flex items-center gap-x-4 lg:!-mt-0">
+          {Object.values({ ...params, page: null })?.map(
+            (item, idx) =>
+              item && (
+                <Chip
+                  key={idx}
+                  title={item}
+                  onClick={() => {
+                    const newParams = { ...params };
+                    delete newParams?.[Object.keys(params)?.[idx]];
+                    router.push(
+                      format({
+                        pathname: pathname,
+                        query: newParams,
+                      }),
+                      {
+                        scroll: false,
+                      }
+                    );
+                  }}
+                />
+              )
+          )}
         </div>
         <div className="space-y-6 flex flex-col items-center">
           <div className="grid pb-10 2xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-x-6 gap-y-16">
@@ -32,7 +76,7 @@ const ProductsSection = (data: { data: any[] }) => {
               <div key={idx} className="space-y-4 group cursor-pointer">
                 <div className="rounded-[43px] relative flex justify-center items-center">
                   <div
-                    onClick={() => setIsActive(true)}
+                    onClick={() => setIsActive("ADD_TO_CATALOG")}
                     className="absolute rounded-[43px] flex justify-center items-center group-hover:h-full h-0 w-0 duration-500 group-hover:w-full bg-primary2/60"
                   >
                     <BsPlusLg
@@ -84,7 +128,34 @@ const ProductsSection = (data: { data: any[] }) => {
           />
         </div>
       </div>
-      {isActive && <EnquiryModal close={() => setIsActive(false)} />}
+      {isActive === "ADD_TO_CATALOG" && (
+        <EnquiryModal close={() => setIsActive("")} />
+      )}
+      {isActive === "SIDEBAR" && (
+        <div
+          className="bg-white lg:hidden h-screen w-full space-y-6 py-2 px-4 fixed left-0 top-0"
+          id="sideBar"
+        >
+          <div className="flex justify-between items-center">
+            <Img
+              alt=""
+              src="/images/icons/logo.png"
+              isLocal
+              height={16.42}
+              width={181.76}
+              role="button"
+              onClick={() => router.push("/")}
+            />
+            <div
+              className="cursor-pointer text-4xl p-3"
+              onClick={() => setIsActive("")}
+            >
+              &times;
+            </div>
+          </div>
+          <Filters filters={filters} isSidebar />
+        </div>
+      )}
     </>
   );
 };
