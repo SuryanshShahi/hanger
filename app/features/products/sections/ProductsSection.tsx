@@ -8,6 +8,7 @@ import EnquiryModal from "./EnquiryModal";
 import { FiFilter } from "react-icons/fi";
 import Filters from "./Filters";
 import Img from "@/app/shared/Img";
+import useScrollHidden from "@/app/utils/useScrollHidden";
 
 const ProductsSection = ({ data, filters }: { data: any[]; filters: any }) => {
   const router = useRouter();
@@ -18,7 +19,7 @@ const ProductsSection = ({ data, filters }: { data: any[]; filters: any }) => {
   const params = Object.fromEntries(searchParams.entries());
   const [isActive, setIsActive] = useState("");
   console.log({ data });
-
+  useScrollHidden(isActive === "SIDEBAR");
   return (
     <>
       <div className="lg:col-span-9 space-y-8">
@@ -153,7 +154,7 @@ const ProductsSection = ({ data, filters }: { data: any[]; filters: any }) => {
               &times;
             </div>
           </div>
-          <Filters filters={filters} isSidebar />
+          <Filters filters={filters} className="overflow-scroll h-screen" />
         </div>
       )}
     </>

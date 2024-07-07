@@ -57,7 +57,7 @@ const Products = ({ data, filters }: { data: Root[]; filters: any }) => {
     <div className="space-y-20 mb-20">
       <Banner />
       <div className="grid lg:grid-cols-12 lg:container mx-auto md:px-0 gap-x-10 !px-5">
-        <Filters filters={filters} />
+        <Filters filters={filters} className='lg:block hidden'/>
         <ProductsSection data={data} filters={filters} />
       </div>
     </div>

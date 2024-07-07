@@ -6,10 +6,10 @@ import { format } from "url";
 
 const Filters = ({
   filters,
-  isSidebar,
+  className,
 }: {
   filters: any;
-  isSidebar?: boolean;
+  className?: string;
 }) => {
   const router = useRouter();
   const pathname = usePathname();
@@ -40,7 +40,7 @@ const Filters = ({
 
   return (
     <div
-      className={`col-span-3 space-y-10 ${isSidebar ? "" : "lg:block hidden"}`}
+      className={`col-span-3 space-y-10 ${className}`}
     >
       <div className="flex items-center gap-x-2 ">
         <FiFilter /> <div className="uppercase">Filters</div>
