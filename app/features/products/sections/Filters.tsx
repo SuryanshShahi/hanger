@@ -42,7 +42,7 @@ const Filters = ({
     <div
       className={`col-span-3 space-y-10 ${className}`}
     >
-      <div className="flex items-center gap-x-2 ">
+      <div className="flex items-center gap-x-2">
         <FiFilter /> <div className="uppercase">Filters</div>
         {Object.values({ ...params, page: null })?.filter((e) => e !== null)
           ?.length > 0 && (

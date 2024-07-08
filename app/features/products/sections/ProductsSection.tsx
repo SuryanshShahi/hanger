@@ -134,7 +134,7 @@ const ProductsSection = ({ data, filters }: { data: any[]; filters: any }) => {
       )}
       {isActive === "SIDEBAR" && (
         <div
-          className="bg-white lg:hidden h-screen w-full space-y-6 py-2 px-4 fixed left-0 top-0"
+          className="bg-white lg:hidden h-full w-full space-y-6 py-2 px-4 fixed left-0 top-0"
           id="sideBar"
         >
           <div className="flex justify-between items-center">
@@ -154,7 +154,10 @@ const ProductsSection = ({ data, filters }: { data: any[]; filters: any }) => {
               &times;
             </div>
           </div>
-          <Filters filters={filters} className="overflow-scroll h-screen" />
+          <Filters
+            filters={filters}
+            className="overflow-scroll h-[calc(100vh-180px)]"
+          />
         </div>
       )}
     </>
