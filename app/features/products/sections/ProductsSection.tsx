@@ -142,8 +142,8 @@ const ProductsSection = ({ data, filters }: { data: any[]; filters: any }) => {
               alt=""
               src="/images/icons/logo.png"
               isLocal
-              height={16.42}
-              width={181.76}
+              height={20}
+              width={202.21}
               role="button"
               onClick={() => router.push("/")}
             />

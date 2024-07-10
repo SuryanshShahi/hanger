@@ -76,7 +76,7 @@ const Home = () => {
       <BeautyAndComfort />
       {/* <OurCollections data={data} /> */}
       <SummerSale />
-      <LatestPosts />
+      {/* <LatestPosts /> */}
     </div>
   );
 };

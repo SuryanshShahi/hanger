@@ -31,7 +31,7 @@ const Tailoring = () => {
         />
         <div className="space-y-8 text-secondary font-sans">
           <p>
-            Our hangers are crafted with the highest quality materials to ensure they provide long-lasting support for your garments.
+            Kavi Hangbro hangers are crafted with the highest quality materials to ensure they provide long-lasting support for your garments.
           </p>
           <p>
             Designed for both functionality and style, our hangers will keep your wardrobe organized and pristine. Discover the perfect balance of elegance and durability with our range of hangers.

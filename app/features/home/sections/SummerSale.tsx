@@ -37,7 +37,7 @@ const SummerSale = () => {
   };
 
   return (
-    <div className="container-sm space-y-10 px-5">
+    <div className="container-sm space-y-10 px-5 py-20">
       <Heading
         heading="OUR ONLINE PRESENCE"
         subHeading="Our Amazon Shop"
