@@ -86,7 +86,7 @@ const ProductsSection = ({ data, filters }: { data: any[]; filters: any }) => {
                     />
                   </div>
                   <img
-                    className="rounded-[43px] sm:w-[330px] sm:h-[330px] h-full w-full"
+                    className="rounded-[40px] min-h-[240px] min-w-[290px] h-full w-full object-cover"
                     src={item?.images?.[0]}
                   />
                 </div>
