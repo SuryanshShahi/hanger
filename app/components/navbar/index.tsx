@@ -43,12 +43,12 @@ const Navbar = () => {
             alt=""
             src="/images/icons/logo.png"
             isLocal
-            height={16.42}
-            width={181.76}
+            height={20}
+            width={202.21}
             role="button"
             onClick={() => router.push("/")}
           />
-          <ul className="lg:flex hidden gap-x-8">
+          <ul className="lg:flex hidden gap-x-8 font-semibold">
             {routes.map((item, idx) => (
               <ListItem
                 key={idx}
@@ -94,8 +94,8 @@ const Navbar = () => {
               alt=""
               src="/images/icons/logo.png"
               isLocal
-              height={16.42}
-              width={181.76}
+              height={20}
+              width={202.21}
               role="button"
               onClick={() => router.push("/")}
             />

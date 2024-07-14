@@ -52,7 +52,7 @@ const BeautyAndComfort = () => {
           <Heading heading="Why Choose Us" subHeading="Unmatched Quality" />
           <p className="text-secondary font-sans">
             Experience the difference that exceptional craftsmanship and
-            attention to detail make. Our hangers are designed to provide
+            attention to detail make. Kavi Hangbro hangers are designed to provide
             unparalleled support and longevity, ensuring your garments stay in
             pristine condition.
           </p>

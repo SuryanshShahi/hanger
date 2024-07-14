@@ -16,7 +16,14 @@ const ListItem = ({
 }) => {
   return (
     <li className="group list-none cursor-pointer" onClick={onClick}>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center gap-4">
+      {withCheck &&
+          (isSelected ? (
+            <ImRadioChecked2 size={17.5} color="#763235" className="-mr[1px]" />
+          ) : (
+            <div className="h-[17px] w-[17px] rounded-full border border-gray-400" />
+          ))}
+
         <div>
           <span
             className={clsx(
@@ -32,12 +39,7 @@ const ListItem = ({
             )}
           ></div>
         </div>
-        {withCheck &&
-          (isSelected ? (
-            <ImRadioChecked2 size={17.5} color="#763235" className="-mr[1px]" />
-          ) : (
-            <div className="h-[17px] w-[17px] rounded-full border border-gray-400" />
-          ))}
+
       </div>
     </li>
   );
