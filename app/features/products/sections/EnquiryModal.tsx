@@ -99,12 +99,13 @@ const EnquiryModal = ({
         )
         .then((res) => {
           console.log(res);
-
           setSubmitting(false);
+          close();
         })
         .catch((err) => {
           console.log(err);
           setSubmitting(false);
+          close();
         });
     },
   });
